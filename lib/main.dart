@@ -7,6 +7,7 @@ void main() {
   return runApp(
     ChangeNotifierProvider<AppStateModel>(
       create: (_) {
+        // アプリ状態を作成する
         AppStateModel stateModel = AppStateModel();
         stateModel.loadProducts();
         return stateModel;
@@ -15,6 +16,7 @@ void main() {
         // オブジェクトに対してメソッドを呼び出すとき
         // ..で呼び出すとCascade呼び出しになる。
       },
+      // アプリそのものを作る
       child: CupertinoStoreApp(),
     )
   );
