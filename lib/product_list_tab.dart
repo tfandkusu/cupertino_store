@@ -5,6 +5,7 @@ import 'model/app_state_model.dart';
 import 'product_row_item.dart';
 
 class ProductListTab extends StatelessWidget {
+  // StatelessWidgetはbuildを持つ
   @override
   Widget build(BuildContext context) {
     // 状態を消費する

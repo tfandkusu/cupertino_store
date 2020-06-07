@@ -15,7 +15,6 @@ class CupertinoStoreApp extends StatelessWidget {
     // 縦画面に固定する。
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-
     return CupertinoApp(
       home: CupertinoStoreHomePage(),
     );
