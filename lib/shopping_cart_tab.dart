@@ -24,8 +24,11 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
 
   @override
   Widget build(BuildContext context) {
+    // モデルで通知されたら変わる部分はConsumerで囲む
     return Consumer<AppStateModel>(
       builder: (context, model, child) {
+        // 囲まれた内部ではmodelが使える。
+        // modelからモデルの変数やメソッドにアクセスできる。
         return CustomScrollView(
           slivers: <Widget>[
             const CupertinoSliverNavigationBar(

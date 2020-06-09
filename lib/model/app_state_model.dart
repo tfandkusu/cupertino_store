@@ -97,12 +97,13 @@ class AppStateModel extends foundation.ChangeNotifier {
 
   // Adds a product to the cart.
   void addProductToCart(int productId) {
+    // 現在の状態を書き換える
     if (!_productsInCart.containsKey(productId)) {
       _productsInCart[productId] = 1;
     } else {
       _productsInCart[productId]++;
     }
-
+    // 状態が変わったことを通知する。
     notifyListeners();
   }
 

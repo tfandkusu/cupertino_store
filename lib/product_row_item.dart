@@ -62,6 +62,7 @@ class ProductRowItem extends StatelessWidget {
           CupertinoButton(
             padding: EdgeInsets.zero,
             onPressed: () {
+              // +ボタンが押されたら、モデルの商品追加メソッドが呼ばれる
               final model = Provider.of<AppStateModel>(context, listen: false);
               model.addProductToCart(product.id);
             },
