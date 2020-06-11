@@ -4,14 +4,16 @@ import 'package:provider/provider.dart';
 import 'model/app_state_model.dart';
 import 'product_row_item.dart';
 
+/// 商品一覧タブ
 class ProductListTab extends StatelessWidget {
   // StatelessWidgetはbuildを持つ
   @override
   Widget build(BuildContext context) {
-    // 状態を消費する
+    // Consumerクラスで囲むことでモデルにアクセス出来る。
     return Consumer<AppStateModel>(
       builder: (context, model, child) {
         // 状態に従ってViewを作る
+        // 商品一覧を取得
         final products = model.getProducts();
         // CustomScrollViewとCupertinoSliverNavigationBarの組み合わせで
         // ナビゲーションバーを小さくすることができる
@@ -36,6 +38,7 @@ class ProductListTab extends StatelessWidget {
                         lastItem: index == products.length - 1,
                       );
                     }
+                    // null返却で打ち止め。個数は返却しなくて良い。
                     return null;
                   },
                 ),

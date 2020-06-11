@@ -7,6 +7,7 @@ import 'styles.dart';
 
 const double _kDateTimePickerHeight = 216;
 
+/// カートタブ
 class ShoppingCartTab extends StatefulWidget {
   @override
   _ShoppingCartTabState createState() {
@@ -48,6 +49,7 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
     );
   }
 
+  /// リスト1行分生成担当
   SliverChildBuilderDelegate _buildSliverChildBuilderDelegate(
       AppStateModel model) {
     return SliverChildBuilderDelegate(
