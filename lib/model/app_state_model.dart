@@ -95,9 +95,12 @@ class AppStateModel extends foundation.ChangeNotifier {
     }).toList();
   }
 
-  // Adds a product to the cart.
+  /// 商品をカートに入れる
+  /// [productId] 商品ID
   void addProductToCart(int productId) {
     // 現在の状態を書き換える
+    // _productsInCartはハッシュテーブル。
+    // 値はキーが指す商品の個数
     if (!_productsInCart.containsKey(productId)) {
       _productsInCart[productId] = 1;
     } else {
@@ -131,9 +134,13 @@ class AppStateModel extends foundation.ChangeNotifier {
     notifyListeners();
   }
 
-  // Loads the list of available products from the repo.
+  /// 商品一覧を読み込む
   void loadProducts() {
+    // 商品一覧を内部の配列に設定
+    // アンダーバーで始まるフィールドはこのファイルからしか読めないことを表す。
+    // Kotlinのようにこのクラスだけでは無い
     _availableProducts = ProductsRepository.loadProducts(Category.all);
+    // 状態の変化を通知
     notifyListeners();
   }
 

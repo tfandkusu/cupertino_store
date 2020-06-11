@@ -5,6 +5,7 @@ import 'model/app_state_model.dart';
 import 'model/product.dart';
 import 'styles.dart';
 
+/// 商品一覧タブの商品ひとつ分Widget
 class ProductRowItem extends StatelessWidget {
   const ProductRowItem({
     this.index,
@@ -62,8 +63,11 @@ class ProductRowItem extends StatelessWidget {
           CupertinoButton(
             padding: EdgeInsets.zero,
             onPressed: () {
-              // +ボタンが押されたら、モデルの商品追加メソッドが呼ばれる
+              // +ボタンが押された
+              // 操作結果をモデルに反映させたいときの書き方。
+              // このタブは変わらないので、Consumerでは囲まない
               final model = Provider.of<AppStateModel>(context, listen: false);
+              // 商品をカートに追加する。
               model.addProductToCart(product.id);
             },
             child: const Icon(
