@@ -6,6 +6,6 @@ https://codelabs.developers.google.com/codelabs/flutter-cupertino
 
 # Additional Tasks
 
+- Local unit test for AppStateModel
 - CI by Bitrise
 - Japanese comments for learning
-- Local unit test for AppStateModel
